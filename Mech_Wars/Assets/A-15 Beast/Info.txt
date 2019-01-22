@@ -1,0 +1,31 @@
+A-15 Beast Battle fighter.
+
+Body: 1129 Polygons
+
+Front Leg: 82 Polygons
+
+Back legs: 116 Polygons each
+
+The engines, propller, front Gun and legs are all seperate pieces that can be animated if need be.
+
+The 3 legs are also included if they are needed.
+
+All texture maps are 1K. TIF and can be resized to your needs.
+
+1 X Texture map.
+
+1 X Texture map with Ambient Occlusion bake (looks good if you dont want a Normal map).
+
+1 X Specular map that can be added to Alpha channel
+
+1 X Texture map with Specular added to alpha
+
+1 X Normal Map.
+
+Enjoy
+
+Any Questions feel free to drop me an email:
+
+duane_mayberry@yahoo.co.uk
+
+www.duanesmind.co.uk

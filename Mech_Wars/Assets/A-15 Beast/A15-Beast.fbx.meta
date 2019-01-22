@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 1af809fc58916e546bf2e7a08a6de66d
+labels:
+- A-15
+- Beast
+- Fighter
+- Jet
+- Space
+- Ship
+- Shooter
+- Military
+- Army
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body
+    100004: Cockpit
+    100006: Front_Leg
+    100008: Gun_Front
+    100010: L_Engine
+    100012: L_Leg
+    100014: L_Turbine
+    100016: R_Engine
+    100018: R_leg
+    100020: R_Turbine
+    400000: //RootNode
+    400002: Body
+    400004: Cockpit
+    400006: Front_Leg
+    400008: Gun_Front
+    400010: L_Engine
+    400012: L_Leg
+    400014: L_Turbine
+    400016: R_Engine
+    400018: R_leg
+    400020: R_Turbine
+    2300000: Body
+    2300002: Cockpit
+    2300004: Front_Leg
+    2300006: Gun_Front
+    2300008: L_Engine
+    2300010: L_Leg
+    2300012: L_Turbine
+    2300014: R_Engine
+    2300016: R_leg
+    2300018: R_Turbine
+    3300000: Body
+    3300002: Cockpit
+    3300004: Front_Leg
+    3300006: Gun_Front
+    3300008: L_Engine
+    3300010: L_Leg
+    3300012: L_Turbine
+    3300014: R_Engine
+    3300016: R_leg
+    3300018: R_Turbine
+    4300000: R_leg
+    4300002: L_Leg
+    4300004: Front_Leg
+    4300006: Body
+    4300008: Gun_Front
+    4300010: Cockpit
+    4300012: R_Engine
+    4300014: R_Turbine
+    4300016: L_Engine
+    4300018: L_Turbine
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_Material
+    second: {fileID: 2100000, guid: 13a82a026c76d33438fce6fa15d88936, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cockpit_material
+    second: {fileID: 2100000, guid: f89c5f0a09933b043bef58287c550fe9, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
