@@ -17,5 +17,10 @@ public class bulletMovement : MonoBehaviour
         transform.Translate( Vector3.up * moveSpeed * Time.deltaTime);
         Destroy(gameObject, 7.0f);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject); //edited
+    }
 }
 

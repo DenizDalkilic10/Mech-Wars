@@ -8,12 +8,14 @@ public class gunRotation : MonoBehaviour {
     public GameObject cameraPivot;
     Quaternion cameraPivotCopy;
 
-	void Start () {
+	void Start ()
+    {
         cameraPivotCopy = new Quaternion(); 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         cameraPivotCopy = cameraPivot.transform.rotation;
         gameObject.transform.rotation = cameraPivotCopy;
 	}

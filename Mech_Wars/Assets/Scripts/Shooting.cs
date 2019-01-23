@@ -4,37 +4,51 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 { 
-    float bulletSpeed = 20000;
+    public float bulletSpeed = 10;
     public GameObject bullet;
     public GameObject MuzzleFlash;
-   // Quaternion rot;
+    public float shotFrequency = 0.2f;
+    public float timeLastShot;
     public static int characterNum = 1;
     private string fire;
-   
+    public Camera cam;
+    private Vector3 targettransform;
 
-    // Use this for initialization
+    public Vector3 Targettransform
+    {
+        get
+        {
+            return targettransform;
+        }
+
+        set
+        {
+            targettransform = value;
+        }
+    }
+
     void Start()
     {
-        fire = CharacterSelection.fireXbox[characterNum-1];
+        fire = CharacterSelection.fireXbox[characterNum-1]; //find a better way to implement this
         characterNum++;
     }
 
-    void Fire()
-    {
-        GameObject tempBullet = Instantiate(bullet, transform.position, transform.rotation);
-        GameObject tempMuzzle = Instantiate(MuzzleFlash, transform.position, MuzzleFlash.transform.rotation); 
-        Rigidbody tempRigidBodyBullet = tempBullet.GetComponent<Rigidbody>();
-        tempRigidBodyBullet.AddForce(tempRigidBodyBullet.transform.right * bulletSpeed);
-        Destroy(tempBullet, 7.0f); 
-    }
-
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(fire))
+        this.transform.LookAt(Targettransform);
+
+        if (Input.GetAxis(fire) != 0 && Time.time - timeLastShot > shotFrequency)
         {
             Fire();
         }
+    }
+    void Fire()
+    {   
+        GameObject tempBullet = Instantiate(bullet, transform.position, transform.rotation);
+        GameObject tempMuzzle = Instantiate(MuzzleFlash, transform.position, MuzzleFlash.transform.rotation); 
+        Rigidbody tempRigidBodyBullet = tempBullet.GetComponent<Rigidbody>();
+        tempRigidBodyBullet.AddForce(tempRigidBodyBullet.transform.forward * bulletSpeed);
+        Destroy(tempBullet, 7.0f);
+        timeLastShot = Time.time;
     }
 }

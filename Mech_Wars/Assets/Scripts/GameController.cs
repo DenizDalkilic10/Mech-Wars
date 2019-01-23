@@ -3,114 +3,146 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour {
 
-    public GameObject[] CharacterArray = new GameObject[4];  // decrease the size to 2 and use the same prefabs for each player
-    public PlayerMovement p1_script, p2_script;             // Use this for initialization
-   // public PlayerMovement p3_script, p4_script;             // Use this for initialization
-    public static GameObject p1, p2;
-    //public static GameObject p3, p4;
-    //public Text player_1, player_2;
-    public RawImage Player_1_img, Player_2_img;
-    public RawImage Player_1_sta, Player_2_sta;
-    //public RawImage Player_3_img, Player_4_img;
-    //public RawImage Player_3_sta, Player_4_sta;
 
+public class GameController : MonoBehaviour
+{
+
+    //VARIABLES
+
+    //GameObject
+    public GameObject[] CharacterArray = new GameObject[2];  // decrease the size to 2 and use the same prefabs for each player
+    public GameObject[] BotArray = new GameObject[2];
+    public static GameObject[] playerArray = new GameObject[4];
+    public GameObject staminaPU, healthPU, ammoPU, portal;
+
+    //float
     public static float[] health = new float[4];
     public static float[] stamina = new float[4];
-    
+    private float[] tempHealthArray = new float[4];
+    private float[] tempStaminaArray = new float[4];
+
+    //RawImage
+    public RawImage[] playerHealthArray = new RawImage[4];
+    public RawImage[] playerStaminaArray = new RawImage[4];
+
+    //PlayerMovement
+    [HideInInspector]
+    public PlayerMovement[] playerScriptArray = new PlayerMovement[4];
+
+    //Canvas
+    public Canvas[] canvasArray = new Canvas[4];
+
+    //////////////////////
+    private Vector3 staminaPowerUpPos, healthPowerUpPos, portalPos, ammoPowerUpPos;
+    public static float timeLastStaminaPU, timeLastHealthPU, timeLastAmmo;
+    float staminaPUFrequency = 10.0f;
+    float healthPUFrequency = 10.0f;
+    float ammoPUFrequency = 10.0f;
+    public static bool ammoPuPresent = false;
+    public static bool healthPuPresent = false;
+    public static bool staminaPuPresent = false;
+
     void Start()
     {
         initializeScene();
+
     }
 
     // Update is called once per frame
     void Update()
-    {     
-        Player_1_img.transform.localScale = new Vector3(health[0] / 100, 1, 1);
-        Player_2_img.transform.localScale = new Vector3(health[1] / 100, 1, 1);
-        Player_1_sta.transform.localScale = new Vector3(stamina[0] / 100, 1, 1);
-        Player_2_sta.transform.localScale = new Vector3(stamina[1] / 100, 1, 1);
-        //Player_3_img.transform.localScale = new Vector3(health[0] / 100, 1, 1);
-        //Player_4_img.transform.localScale = new Vector3(health[1] / 100, 1, 1);
-        //Player_3_sta.transform.localScale = new Vector3(stamina[0] / 100, 1, 1);
-        //Player_4_sta.transform.localScale = new Vector3(stamina[1] / 100, 1, 1);
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            playerHealthArray[i].transform.localScale = new Vector3(health[i] / tempHealthArray[i], 1, 1);
+            playerStaminaArray[i].transform.localScale = new Vector3(stamina[i] / tempStaminaArray[i], 1, 1);
+        }
+        //if (Time.time - timeLastAmmo > ammoPUFrequency && !ammoPuPresent)
+        //    formAmmoPU();
+        if (Time.time - timeLastHealthPU > healthPUFrequency && !healthPuPresent)
+            formHealthPU();
+        if (Time.time - timeLastStaminaPU > staminaPUFrequency && !staminaPuPresent)
+            formStaminaPU();
     }
 
-    void initializeScene() {
+    void initializeScene()
+    {
 
         CharacterSelection.sceneChanged = true;
-      
-        //for player 1
-        if (CharacterSelection.characterChoices[0] == 1)  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        {
-            p1 = CharacterArray[0];
-            Instantiate(p1, new Vector3(412, 1, 438), Quaternion.identity);
-            Debug.Log("Player1_Instantiated");
-        }
-        if (CharacterSelection.characterChoices[0] == 2)
-        {
-            p1 = CharacterArray[1];
-            Instantiate(p1, new Vector3(412, 1, 438), Quaternion.identity);
-            Debug.Log("Player1_Instantiated");
-        }
 
-        //for player 2
-        if (CharacterSelection.characterChoices[1] == 1)
+        for (int i = 0; i < 4; i++)
         {
-            p2 = CharacterArray[2]; //try this with characterArray[0]
-            Instantiate(p2, new Vector3(155, 1, 383), Quaternion.identity);
-            Debug.Log("Player2_Instantiated");
-        }
-        if (CharacterSelection.characterChoices[1] == 2)
-        {
-            p2 = CharacterArray[3]; //try this with characterArray[1]
-            Instantiate(p2, new Vector3(155, 1, 383), Quaternion.identity);
-            Debug.Log("Player2_Instantiated");
+            if (CharacterSelection.characterChoices[i] == 1)  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            {
+                playerArray[i] = Instantiate(CharacterArray[0], GameObject.Find("controlPoint" + (i + 1)).transform.position, Quaternion.identity) as GameObject;
+            }
+            if (CharacterSelection.characterChoices[i] == 2)
+            {
+                playerArray[i] = Instantiate(CharacterArray[1], GameObject.Find("controlPoint" + (i + 1)).transform.position, Quaternion.identity) as GameObject;
+            }
+            else if (CharacterSelection.characterChoices[i] == 0)
+            {
+                playerArray[i] = Instantiate(BotArray[Random.Range(0, 1)], GameObject.Find("controlPoint" + (i + 1)).transform.position, Quaternion.identity) as GameObject;
+                canvasArray[i].enabled = false;
+            }
         }
 
-        //for player 3
-        //if (CharacterSelection.characterChoices[2] == 1)
-        //{
-        //    p3 = CharacterArray[0];
-        //    Instantiate(p3, new Vector3(155, 1, 383), Quaternion.identity); //change the cooardinates
-        //    Debug.Log("Player2_Instantiated");
-        //}
-        //if (CharacterSelection.characterChoices[2] == 2)
-        //{
-        //    p3 = CharacterArray[1];
-        //    Instantiate(p3, new Vector3(155, 1, 383), Quaternion.identity); //change the cooardinates
-        //    Debug.Log("Player2_Instantiated");
-        //}
+        for (int i = 0; i < 4; i++)
+        {
+            playerScriptArray[i] = playerArray[i].GetComponent<PlayerMovement>();
 
+        }
 
-        //for player 4
-        //if (CharacterSelection.characterChoices[3] == 1)
-        //{
-        //    p4 = CharacterArray[0];
-        //    Instantiate(p4, new Vector3(155, 1, 383), Quaternion.identity); //change the cooardinates
-        //    Debug.Log("Player2_Instantiated");
-        //}
-        //if (CharacterSelection.characterChoices[3] == 2)
-        //{
-        //    p4 = CharacterArray[1];
-        //    Instantiate(p4, new Vector3(155, 1, 383), Quaternion.identity); //change the cooardinates
-        //    Debug.Log("Player2_Instantiated");
-        //}
+        for (int i = 0; i < 4; i++)
+        {
+            if (canvasArray[i].enabled)
+                canvasArray[i].GetComponent<Canvas>().worldCamera = playerArray[i].transform.Find("CameraPivot").transform.Find("Camera").gameObject.GetComponent<Camera>();
+        }
 
-        p1_script = p1.GetComponent<PlayerMovement>();
-        p2_script = p2.GetComponent<PlayerMovement>();
-        //p3_script = p1.GetComponent<PlayerMovement>();
-        //p4_script = p2.GetComponent<PlayerMovement>();
+        for (int i = 0; i < 4; i++)
+        {
+            if (playerScriptArray[i])
+                tempHealthArray[i] = playerScriptArray[i].health;
+            else //if bot
+                tempHealthArray[i] = 100;
+        }
 
-       //if (p1_script.playerName == "Gepard")
-       //     player_1.color = Color.red;
-       // else if (p1_script.playerName == "Rhino")
-       //     player_1.color = Color.green;
+        for (int i = 0; i < 4; i++)
+        {
+            if (playerScriptArray[i])
+                tempStaminaArray[i] = playerScriptArray[i].stamina;
+            else //if bot
+                tempStaminaArray[i] = 100;
+        }
+    }
 
-       // if (p2_script.playerName == "Gepard")
-       //     player_2.color = Color.red;
-       // else if (p2_script.playerName == "Rhino")
-       //     player_2.color = Color.green;
+    void formStaminaPU()
+    {
+
+        staminaPowerUpPos.y = 20;
+        staminaPowerUpPos.x = Random.Range(500, 1500);
+        staminaPowerUpPos.z = Random.Range(500, 1500);
+        Instantiate(staminaPU, staminaPowerUpPos, Quaternion.identity);
+        staminaPuPresent = true;
+        //timeLastStaminaPU= Time.time;
+    }
+    void formHealthPU()
+    {
+
+        healthPowerUpPos.y = 20;
+        healthPowerUpPos.x = Random.Range(500, 1500);
+        healthPowerUpPos.z = Random.Range(500, 1500);
+        Instantiate(healthPU, healthPowerUpPos, Quaternion.identity);
+        healthPuPresent = true;
+        //timeLastHealthPU = Time.time;
+    }
+    void formAmmoPU()
+    {
+
+        ammoPowerUpPos.y = 20;
+        ammoPowerUpPos.x = Random.Range(500, 1500);
+        ammoPowerUpPos.z = Random.Range(500, 1500);
+        Instantiate(ammoPU, ammoPowerUpPos, Quaternion.identity);
+        //timeLastAmmo = Time.time;
     }
 }

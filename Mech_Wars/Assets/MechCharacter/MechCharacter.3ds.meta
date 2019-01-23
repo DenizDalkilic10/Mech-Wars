@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: a46cc0dbac0fd994e8cbdc889bf0c4a9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BottomOfCock
+    100002: LeftFoot
+    100004: LeftHand
+    100006: LeftLeg
+    100008: LeftMusle
+    100010: LeftToe1a
+    100012: LeftToe1b
+    100014: LeftToe2a
+    100016: LeftToe2b
+    100018: LeftToe3a
+    100020: LeftToe3b
+    100022: MechBody
+    100024: MechCage
+    100026: //RootNode
+    100028: RightFoot
+    100030: RightHand
+    100032: RightLeg
+    100034: RightMusle
+    100036: RightToe1a
+    100038: RightToe1b
+    100040: RightToe2a
+    100042: RightToe2b
+    100044: RightToe3a
+    100046: RightToe3b
+    100048: Turret
+    400000: BottomOfCock
+    400002: LeftFoot
+    400004: LeftHand
+    400006: LeftLeg
+    400008: LeftMusle
+    400010: LeftToe1a
+    400012: LeftToe1b
+    400014: LeftToe2a
+    400016: LeftToe2b
+    400018: LeftToe3a
+    400020: LeftToe3b
+    400022: MechBody
+    400024: MechCage
+    400026: //RootNode
+    400028: RightFoot
+    400030: RightHand
+    400032: RightLeg
+    400034: RightMusle
+    400036: RightToe1a
+    400038: RightToe1b
+    400040: RightToe2a
+    400042: RightToe2b
+    400044: RightToe3a
+    400046: RightToe3b
+    400048: Turret
+    2100000: MaterialMech
+    2100002: MaterialMech.000
+    2300000: BottomOfCock
+    2300002: LeftFoot
+    2300004: LeftHand
+    2300006: LeftLeg
+    2300008: LeftMusle
+    2300010: LeftToe1a
+    2300012: LeftToe1b
+    2300014: LeftToe2a
+    2300016: LeftToe2b
+    2300018: LeftToe3a
+    2300020: LeftToe3b
+    2300022: MechBody
+    2300024: MechCage
+    2300026: RightFoot
+    2300028: RightHand
+    2300030: RightLeg
+    2300032: RightMusle
+    2300034: RightToe1a
+    2300036: RightToe1b
+    2300038: RightToe2a
+    2300040: RightToe2b
+    2300042: RightToe3a
+    2300044: RightToe3b
+    2300046: Turret
+    3300000: BottomOfCock
+    3300002: LeftFoot
+    3300004: LeftHand
+    3300006: LeftLeg
+    3300008: LeftMusle
+    3300010: LeftToe1a
+    3300012: LeftToe1b
+    3300014: LeftToe2a
+    3300016: LeftToe2b
+    3300018: LeftToe3a
+    3300020: LeftToe3b
+    3300022: MechBody
+    3300024: MechCage
+    3300026: RightFoot
+    3300028: RightHand
+    3300030: RightLeg
+    3300032: RightMusle
+    3300034: RightToe1a
+    3300036: RightToe1b
+    3300038: RightToe2a
+    3300040: RightToe2b
+    3300042: RightToe3a
+    3300044: RightToe3b
+    3300046: Turret
+    4300000: LeftHand
+    4300002: MechBody
+    4300004: BottomOfCock
+    4300006: MechCage
+    4300008: RightHand
+    4300010: Turret
+    4300012: LeftMusle
+    4300014: LeftLeg
+    4300016: LeftFoot
+    4300018: LeftToe3a
+    4300020: LeftToe3b
+    4300022: LeftToe1a
+    4300024: LeftToe1b
+    4300026: LeftToe2b
+    4300028: LeftToe2a
+    4300030: RightMusle
+    4300032: RightLeg
+    4300034: RightFoot
+    4300036: RightToe2a
+    4300038: RightToe2b
+    4300040: RightToe1a
+    4300042: RightToe1b
+    4300044: RightToe3a
+    4300046: RightToe3b
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
